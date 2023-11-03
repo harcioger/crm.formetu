@@ -2,8 +2,8 @@ import { api } from '../config';
 
 const resource = '';
 export default {
-  async login(email: string, password: string) {
-    const resp = await api.post(`${resource}/login`, { email, password });
+  async login(username: string, password: string): Promise<object> {
+    const resp = await api.post(`${resource}/v1/login`, { username, password });
 
     return resp.data.data;
   },
